@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 export default function AdminKYC() {
   const [verifications, setVerifications] = useState<any[]>([]);
@@ -104,7 +104,7 @@ export default function AdminKYC() {
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
                     {v.ktp_image ? (
-                      <img src={`http://localhost:8000/storage/${v.ktp_image}`} alt="KTP"
+                      <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${v.ktp_image}`} alt="KTP"
                         style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
                         onClick={() => setDetail(v)}
                       />
@@ -119,7 +119,7 @@ export default function AdminKYC() {
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
                     {v.selfie_image ? (
-                      <img src={`http://localhost:8000/storage/${v.selfie_image}`} alt="Selfie"
+                      <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${v.selfie_image}`} alt="Selfie"
                         style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
                         onClick={() => setDetail(v)}
                       />
@@ -230,14 +230,14 @@ export default function AdminKYC() {
               <div>
                 <div style={{ fontSize: "0.8rem", color: "var(--foreground-muted)", marginBottom: "8px", fontWeight: 600 }}>Foto KTP</div>
                 {detail.ktp_image && (
-                  <img src={`http://localhost:8000/storage/${detail.ktp_image}`} alt="KTP"
+                  <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${detail.ktp_image}`} alt="KTP"
                     style={{ width: "100%", borderRadius: "var(--radius-md)", border: "1px solid var(--border)" }} />
                 )}
               </div>
               <div>
                 <div style={{ fontSize: "0.8rem", color: "var(--foreground-muted)", marginBottom: "8px", fontWeight: 600 }}>Selfie + KTP</div>
                 {detail.selfie_image && (
-                  <img src={`http://localhost:8000/storage/${detail.selfie_image}`} alt="Selfie"
+                  <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${detail.selfie_image}`} alt="Selfie"
                     style={{ width: "100%", borderRadius: "var(--radius-md)", border: "1px solid var(--border)" }} />
                 )}
               </div>

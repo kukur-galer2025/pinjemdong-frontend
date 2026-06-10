@@ -5,7 +5,7 @@ import { useState, useEffect, lazy, Suspense } from "react";
 
 const DeliveryMap = lazy(() => import("../../components/DeliveryMap"));
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
 
 export default function VerificationPage() {
   const [loading, setLoading] = useState(true);

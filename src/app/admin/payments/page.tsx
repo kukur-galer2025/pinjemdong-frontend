@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 function formatRupiah(n: number | string) { return new Intl.NumberFormat("id-ID").format(Number(n)); }
 
@@ -144,7 +144,7 @@ export default function AdminPayments() {
                     padding: "12px", textAlign: "center", border: "1px solid var(--border)",
                   }}>
                     <img
-                      src={`http://localhost:8000/storage/${p.proof_image}`}
+                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${p.proof_image}`}
                       alt="Bukti Transfer"
                       style={{ maxWidth: "100%", maxHeight: "200px", borderRadius: "var(--radius-sm)", objectFit: "contain" }}
                     />

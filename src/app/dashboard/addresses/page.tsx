@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const AddressMap = lazy(() => import("../../../components/AddressMap"));
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
 
 export default function AddressesPage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

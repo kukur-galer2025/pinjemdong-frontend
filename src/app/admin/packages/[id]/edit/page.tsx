@@ -5,7 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 function formatRupiah(n: number | string) { return new Intl.NumberFormat("id-ID").format(Number(n)); }
 
@@ -56,7 +56,7 @@ export default function EditPackage() {
         });
 
         if (pack.image) {
-          const imgUrl = pack.image.startsWith('http') ? pack.image : `http://localhost:8000${pack.image}`;
+          const imgUrl = pack.image.startsWith('http') ? pack.image : `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}${pack.image}`;
           setImagePreview(imgUrl);
         }
 

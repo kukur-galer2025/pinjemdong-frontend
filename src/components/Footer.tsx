@@ -75,15 +75,20 @@ export default function Footer() {
             <div style={{ flex: "1 1 120px" }}>
               <h4 style={{ fontWeight: 700, marginBottom: "20px", fontSize: "1.05rem", color: "#ffffff" }}>Layanan</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                {["Katalog Barang", "Paket Hemat", "Cara Sewa", "FAQ"].map((label) => (
+                {[
+                  { label: "Katalog Barang", href: "/catalog" },
+                  { label: "Paket Hemat", href: "/packages" },
+                  { label: "Cara Sewa", href: "/how-it-works" },
+                  { label: "FAQ", href: "/faq" },
+                ].map((item) => (
                   <Link
-                    key={label}
-                    href="#"
+                    key={item.label}
+                    href={item.href}
                     style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.95rem", transition: "color var(--transition-fast)" }}
                     onMouseEnter={(e) => e.currentTarget.style.color = "#ffffff"}
                     onMouseLeave={(e) => e.currentTarget.style.color = "#94a3b8"}
                   >
-                    {label}
+                    {item.label}
                   </Link>
                 ))}
               </div>
@@ -93,15 +98,19 @@ export default function Footer() {
             <div style={{ flex: "1 1 120px" }}>
               <h4 style={{ fontWeight: 700, marginBottom: "20px", fontSize: "1.05rem", color: "#ffffff" }}>Perusahaan</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                {["Tentang Kami", "Syarat & Ketentuan", "Kebijakan Privasi", "Karir"].map((label) => (
+                {[
+                  { label: "Tentang Kami", href: "/about" },
+                  { label: "Syarat & Ketentuan", href: "/terms" },
+                  { label: "Kebijakan Privasi", href: "/privacy" },
+                ].map((item) => (
                   <Link
-                    key={label}
-                    href={label === "Syarat & Ketentuan" ? "/terms" : "#"}
+                    key={item.label}
+                    href={item.href}
                     style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.95rem", transition: "color var(--transition-fast)" }}
                     onMouseEnter={(e) => e.currentTarget.style.color = "#ffffff"}
                     onMouseLeave={(e) => e.currentTarget.style.color = "#94a3b8"}
                   >
-                    {label}
+                    {item.label}
                   </Link>
                 ))}
               </div>

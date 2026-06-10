@@ -5,7 +5,7 @@ import RevenueChart from "@/components/RevenueChart";
 import CategoryPieChart from "@/components/CategoryPieChart";
 import TopProductsBarChart from "@/components/TopProductsBarChart";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 interface Stats {
   total_users: number;

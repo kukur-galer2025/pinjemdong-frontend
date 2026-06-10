@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 function formatRupiah(n: number | string) { return new Intl.NumberFormat("id-ID").format(Number(n)); }
 
@@ -111,7 +111,7 @@ export default function AdminPackages() {
                       <td style={{ padding: "14px 16px", display: "flex", gap: "12px", alignItems: "center" }}>
                         <div style={{ width: "40px", height: "40px", borderRadius: "8px", overflow: "hidden", background: "var(--background-secondary)", flexShrink: 0 }}>
                           {p.image ? (
-                            <img src={p.image.startsWith('http') ? p.image : `http://localhost:8000${p.image}`} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            <img src={p.image.startsWith('http') ? p.image : `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}${p.image}`} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--foreground-muted)" }}>📦</div>
                           )}

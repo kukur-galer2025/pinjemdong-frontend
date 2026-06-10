@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 function formatRupiah(n: number | string) { return new Intl.NumberFormat("id-ID").format(Number(n)); }
 

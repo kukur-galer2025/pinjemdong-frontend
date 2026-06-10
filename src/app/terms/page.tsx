@@ -25,13 +25,28 @@ export default function TermsPage() {
         {/* Content */}
         <div className="card" style={{ padding: "40px", borderRadius: "var(--radius-xl)" }}>
           
+          <section style={{ marginBottom: "32px", padding: "20px", background: "var(--primary-light)", borderRadius: "var(--radius-lg)", border: "1px solid var(--primary)" }}>
+            <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "var(--primary)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              Dasar Hukum Perjanjian Sewa-Menyewa
+            </h2>
+            <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "0.95rem" }}>
+              <p style={{ marginBottom: "8px" }}>Syarat dan Ketentuan ini merupakan bentuk kesepakatan tertulis elektronik yang mengikat secara hukum antara Pengguna (Penyewa) dan PinjemDong, yang tunduk pada hukum negara Republik Indonesia, meliputi namun tidak terbatas pada:</p>
+              <ul style={{ paddingLeft: "24px" }}>
+                <li><strong>Pasal 1320 jo. Pasal 1338 KUHPerdata:</strong> Perjanjian elektronik yang disetujui Pengguna sah dan berlaku mengikat sebagai Undang-Undang bagi kedua belah pihak.</li>
+                <li><strong>Pasal 1548 KUHPerdata:</strong> Mengikat secara sah mengenai definisi dan hak serta kewajiban dalam proses sewa-menyewa.</li>
+                <li><strong>Pasal 1564 KUHPerdata:</strong> Penyewa bertanggung jawab atas segala kerusakan atau kehilangan barang yang disewakan selama masa sewa berlangsung.</li>
+                <li><strong>UU No. 11 Tahun 2008 (UU ITE):</strong> Pengakuan bahwa rekam jejak digital (klik persetujuan, log sistem) merupakan alat bukti hukum yang sah di pengadilan.</li>
+              </ul>
+            </div>
+          </section>
+          
           <section style={{ marginBottom: "32px" }}>
             <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "var(--foreground)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ color: "var(--primary)" }}>1.</span> Perhitungan Durasi Sewa (24-Jam Blok)
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
               <p style={{ marginBottom: "12px" }}>
-                PinjemDong menerapkan sistem durasi <strong>Blok 24-Jam</strong> yang dihitung secara presisi sejak Jam Pengambilan hingga Jam Pengembalian yang Anda pilih saat <i>checkout</i>.
+                (1) PinjemDong menerapkan sistem durasi <strong>Blok 24-Jam</strong> yang dihitung secara presisi sejak Jam Pengambilan hingga Jam Pengembalian yang Anda pilih saat <i>checkout</i>.
               </p>
               <ul style={{ paddingLeft: "24px", marginBottom: "12px" }}>
                 <li>Setiap blok 24 jam akan dihitung sebagai <strong>1 Hari Sewa</strong>.</li>
@@ -47,7 +62,7 @@ export default function TermsPage() {
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
               <p style={{ marginBottom: "12px" }}>
-                Kami memahami bahwa kendala di perjalanan bisa terjadi. Oleh karena itu, kami memberikan toleransi keterlambatan pengembalian selama <strong>maksimal 1 Jam</strong> secara gratis.
+                (1) Kami memahami bahwa kendala di perjalanan bisa terjadi. Oleh karena itu, kami memberikan toleransi keterlambatan pengembalian selama <strong>maksimal 1 Jam</strong> secara gratis.
               </p>
               <div style={{ padding: "16px", background: "var(--background-elevated)", borderLeft: "4px solid var(--primary)", borderRadius: "var(--radius-md)", margin: "16px 0" }}>
                 <strong>Contoh Skenario Toleransi:</strong><br/>
@@ -64,10 +79,10 @@ export default function TermsPage() {
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
               <p>
-                Barang yang tidak dikembalikan tepat waktu (melewati batas toleransi 1 jam dari jadwal kembalinya) akan otomatis dikenakan denda keterlambatan sistem.
+                (1) Barang yang tidak dikembalikan tepat waktu (melewati batas toleransi 1 jam dari jadwal kembalinya) akan otomatis dikenakan denda keterlambatan sistem.
               </p>
               <p style={{ fontWeight: 600, color: "var(--error)", marginTop: "8px" }}>
-                Denda keterlambatan ditetapkan sebesar 100% dari harga sewa barang per hari, dikalikan dengan setiap kelipatan hari (24-jam) keterlambatannya.
+                (2) Denda keterlambatan ditetapkan sebesar 100% dari harga sewa barang per hari, dikalikan dengan setiap kelipatan hari (24-jam) keterlambatannya.
               </p>
             </div>
           </section>
@@ -78,7 +93,24 @@ export default function TermsPage() {
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
               <p>
-                Sebelum dapat membuat pesanan pertama, setiap penyewa wajib melakukan verifikasi identitas di menu Dashboard dengan mengunggah foto KTP dan swafoto (selfie). Data ini kami jaga keamanannya dan hanya digunakan untuk kepentingan garansi perlengkapan.
+                (1) Sebelum dapat membuat pesanan pertama, setiap penyewa wajib melakukan verifikasi identitas di menu Dashboard dengan mengunggah foto KTP dan swafoto (selfie). Data ini kami jaga keamanannya dan hanya digunakan untuk kepentingan garansi perlengkapan.
+              </p>
+            </div>
+          </section>
+          
+          <section style={{ marginBottom: "32px" }}>
+            <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "var(--foreground)", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ color: "var(--primary)" }}>5.</span> Tanggung Jawab atas Kerusakan & Kehilangan
+            </h2>
+            <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
+              <p>
+                (1) Sebagaimana diatur dalam <strong>Pasal 1564 KUHPerdata</strong>, Penyewa bertanggung jawab penuh atas segala bentuk kerusakan, cacat, atau hilangnya perlengkapan yang terjadi selama masa penyewaan.
+              </p>
+              <p>
+                (2) Apabila terjadi kerusakan yang dapat diperbaiki, penyewa wajib menanggung seluruh biaya perbaikan atau servis alat terkait sesuai tagihan dari pihak teknisi resmi PinjemDong.
+              </p>
+              <p>
+                (3) Apabila barang hilang, dicuri, atau dirusak secara sengaja maupun tidak sengaja hingga tidak dapat diservis, maka penyewa wajib melakukan ganti rugi penuh sebesar harga jual resmi barang baru tersebut di pasaran. Apabila penyewa menolak ganti rugi, PinjemDong berhak membawa masalah ini ke jalur perdata maupun pidana sesuai dengan <strong>Pasal 372 KUHP (Tindak Pidana Penggelapan)</strong>.
               </p>
             </div>
           </section>

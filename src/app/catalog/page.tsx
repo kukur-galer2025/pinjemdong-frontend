@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
 
 interface Product {
   id: number;
@@ -677,7 +677,7 @@ export default function CatalogPage() {
                 {product.primary_image ? (
                   <div className="w-full h-full relative overflow-hidden">
                     <Image
-                      src={product.primary_image.image_path.startsWith('http') ? product.primary_image.image_path : 'http://localhost:8000' + product.primary_image.image_path}
+                      src={product.primary_image.image_path.startsWith('http') ? product.primary_image.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + product.primary_image.image_path}
                       alt={product.name}
                       fill
                       style={{ objectFit: 'cover' }}

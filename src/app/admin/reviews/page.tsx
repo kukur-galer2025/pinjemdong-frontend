@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const API = "http://localhost:8000/api";
+const API = (process.env.NEXT_PUBLIC_API_URL || "");
 
 interface Review {
   id: number;
@@ -114,7 +114,7 @@ export default function AdminReviews() {
               {review.photo_url && (
                 <div style={{ marginBottom: "16px" }}>
                   <img 
-                    src={`http://localhost:8000/storage/${review.photo_url}`} 
+                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${review.photo_url}`} 
                     alt="Foto Ulasan" 
                     style={{ maxWidth: "200px", borderRadius: "var(--radius-md)", border: "1px solid var(--border)" }} 
                   />

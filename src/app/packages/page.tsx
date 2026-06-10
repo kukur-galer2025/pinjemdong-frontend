@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
 
 interface Package {
   id: number;
@@ -30,7 +30,7 @@ function formatRupiah(num: number | string): string {
 function getImageUrl(imagePath: string | null): string {
   if (!imagePath) return "";
   if (imagePath.startsWith("http")) return imagePath;
-  return `http://localhost:8000/storage/${imagePath}`;
+  return `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/storage/${imagePath}`;
 }
 
 export default function PackagesPage() {
@@ -175,6 +175,7 @@ export default function PackagesPage() {
                       <Image 
                         src={getImageUrl(pkg.image)} 
                         alt={pkg.name} fill style={{ objectFit: "cover" }} 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
                       <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "var(--background-elevated)" }}>

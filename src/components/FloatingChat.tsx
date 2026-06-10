@@ -71,7 +71,7 @@ export default function FloatingChat() {
       setUnreadCount(0);
       if (user?.token) {
         // Mark as read
-        fetch("http://localhost:8000/api/chats/read", {
+        fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats/read", {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${user.token}`,
@@ -85,7 +85,7 @@ export default function FloatingChat() {
 
   const fetchChats = async (token: string) => {
     try {
-      const res = await fetch("http://localhost:8000/api/chats", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats", {
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
@@ -109,7 +109,7 @@ export default function FloatingChat() {
     setNewMessage("");
 
     try {
-      const res = await fetch("http://localhost:8000/api/chats", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${user.token}`,
