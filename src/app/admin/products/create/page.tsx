@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-const API = (process.env.NEXT_PUBLIC_API_URL || "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 export default function CreateProduct() {
   const router = useRouter();

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 interface WishlistProduct {
   id: number;

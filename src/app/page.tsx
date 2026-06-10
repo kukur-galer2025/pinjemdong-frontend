@@ -54,7 +54,7 @@ export default function HomePage() {
 
   useEffect(() => {
     // Fetch products
-    fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/products?featured=1&per_page=8", {
+    fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/products?featured=1&per_page=8", {
       headers: { Accept: "application/json" },
     })
       .then((r) => r.json())
@@ -62,7 +62,7 @@ export default function HomePage() {
       .catch(() => {});
 
     // Fetch categories
-    fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/categories")
+    fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/categories")
       .then((r) => r.json())
       .then((data) => setCategories(data.categories || []))
       .catch(() => {});
@@ -484,7 +484,7 @@ export default function HomePage() {
                   )}
                   {product.primary_image ? (
                     <Image
-                      src={product.primary_image.image_path.startsWith('http') ? product.primary_image.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + product.primary_image.image_path}
+                      src={product.primary_image.image_path.startsWith('http') ? product.primary_image.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + product.primary_image.image_path}
                       alt={product.name}
                       fill
                       style={{ objectFit: 'cover' }}

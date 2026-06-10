@@ -36,7 +36,7 @@ export default function NotificationDropdown() {
     if (!token) return;
 
     try {
-      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/user-alerts", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/user-alerts", {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json",
@@ -77,7 +77,7 @@ export default function NotificationDropdown() {
     setUnreadCount(prev => Math.max(0, prev - 1));
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api/user-alerts/${id}/mark-as-read`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/api/user-alerts/${id}/mark-as-read`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -97,7 +97,7 @@ export default function NotificationDropdown() {
     setUnreadCount(0);
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api/user-alerts/mark-all-read`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/api/user-alerts/mark-all-read`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

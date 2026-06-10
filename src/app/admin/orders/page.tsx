@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const API = (process.env.NEXT_PUBLIC_API_URL || "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 const statusOptions = [
   { value: "pending_payment", label: "Menunggu Pembayaran" },

@@ -7,7 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 interface Product {
   id: number;
@@ -172,7 +172,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         quantity: quantity,
         category_icon: product.category?.icon,
         min_dp_percentage: product.min_dp_percentage,
-        image_url: product.images?.[0]?.image_path ? (product.images[0].image_path.startsWith('http') ? product.images[0].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + product.images[0].image_path) : null,
+        image_url: product.images?.[0]?.image_path ? (product.images[0].image_path.startsWith('http') ? product.images[0].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + product.images[0].image_path) : null,
         available_units: product.available_units_count,
       });
     }
@@ -331,7 +331,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
           }}>✕</button>
           <div style={{ position: "relative", width: "90vw", height: "80vh", maxWidth: "1000px" }}>
             <Image
-              src={product.images[currentImageIndex].image_path.startsWith('http') ? product.images[currentImageIndex].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + product.images[currentImageIndex].image_path}
+              src={product.images[currentImageIndex].image_path.startsWith('http') ? product.images[currentImageIndex].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + product.images[currentImageIndex].image_path}
               alt={product.name}
               fill
               style={{ objectFit: 'contain' }}
@@ -421,7 +421,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
             {product.images && product.images.length > 0 ? (
               <Image
-                src={product.images[currentImageIndex].image_path.startsWith('http') ? product.images[currentImageIndex].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + product.images[currentImageIndex].image_path}
+                src={product.images[currentImageIndex].image_path.startsWith('http') ? product.images[currentImageIndex].image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + product.images[currentImageIndex].image_path}
                 alt={product.name}
                 fill
                 style={{ objectFit: 'cover' }}
@@ -448,7 +448,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     transition: "all 0.3s ease"
                   }}
                 >
-                  <Image src={img.image_path.startsWith('http') ? img.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + img.image_path} alt={`Thumbnail ${index + 1}`} fill style={{ objectFit: 'cover' }} unoptimized />
+                  <Image src={img.image_path.startsWith('http') ? img.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + img.image_path} alt={`Thumbnail ${index + 1}`} fill style={{ objectFit: 'cover' }} unoptimized />
                 </button>
               ))}
             </div>
@@ -602,13 +602,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                             {review.photo_url && (
                               <div style={{ marginTop: "16px", borderRadius: "var(--radius-md)", overflow: "hidden", border: "1px solid var(--border)", display: "inline-block" }}>
                                 <Image 
-                                  src={review.photo_url.startsWith('http') ? review.photo_url : `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}${review.photo_url}`} 
+                                  src={review.photo_url.startsWith('http') ? review.photo_url : `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}${review.photo_url}`} 
                                   alt="Foto Ulasan" 
                                   width={120} height={120} 
                                   style={{ objectFit: "cover", cursor: "pointer", transition: "transform 0.2s" }} 
                                   onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
                                   onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-                                  onClick={() => window.open(review.photo_url?.startsWith('http') ? review.photo_url : `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}${review.photo_url}`, '_blank')}
+                                  onClick={() => window.open(review.photo_url?.startsWith('http') ? review.photo_url : `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}${review.photo_url}`, '_blank')}
                                   unoptimized
                                 />
                               </div>
@@ -816,7 +816,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               <Link key={rp.id} href={`/item/${rp.slug}`} className="card flex flex-col hover-scale" style={{ textDecoration: "none", color: "var(--foreground)", overflow: "hidden" }}>
                 <div style={{ height: "140px", background: "var(--primary-gradient)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
                   {rp.primary_image ? (
-                    <Image src={rp.primary_image.image_path.startsWith('http') ? rp.primary_image.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "") + rp.primary_image.image_path} alt={rp.name} fill style={{ objectFit: 'cover' }} unoptimized />
+                    <Image src={rp.primary_image.image_path.startsWith('http') ? rp.primary_image.image_path : (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + rp.primary_image.image_path} alt={rp.name} fill style={{ objectFit: 'cover' }} unoptimized />
                   ) : (
                     <span style={{ fontSize: "3rem" }}>{productIcons[product.category?.slug] || "📦"}</span>
                   )}

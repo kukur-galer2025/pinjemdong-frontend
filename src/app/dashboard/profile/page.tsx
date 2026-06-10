@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 export default function ProfilePage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

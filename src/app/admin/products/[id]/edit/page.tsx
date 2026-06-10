@@ -5,7 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-const API = (process.env.NEXT_PUBLIC_API_URL || "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 export default function EditProduct() {
   const router = useRouter();
@@ -221,7 +221,7 @@ export default function EditProduct() {
                     if (b.is_primary) return 1;
                     return a.sort_order - b.sort_order;
                   }).map((img) => {
-                    const imgUrl = img.image_path.startsWith('http') ? img.image_path : `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}${img.image_path}`;
+                    const imgUrl = img.image_path.startsWith('http') ? img.image_path : `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}${img.image_path}`;
                     return (
                       <div key={img.id} style={{ 
                         position: "relative", width: "140px", height: "140px", borderRadius: "var(--radius-md)", 

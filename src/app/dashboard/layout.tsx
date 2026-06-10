@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "");
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 interface User {
   id: number;

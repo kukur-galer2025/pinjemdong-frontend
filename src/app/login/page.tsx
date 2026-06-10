@@ -28,7 +28,7 @@ function LoginForm() {
         ? { email, password }
         : { name, email, phone, password, password_confirmation: confirmPassword };
 
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api${endpoint}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/api${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -62,7 +62,7 @@ function LoginForm() {
           headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
         }).then((res) => res.json());
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api/auth/google`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/api/auth/google`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const API = (process.env.NEXT_PUBLIC_API_URL || "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api");
 
 export default function AdminUsers() {
   const [users, setUsers] = useState<any[]>([]);

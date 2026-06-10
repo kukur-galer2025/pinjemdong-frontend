@@ -32,7 +32,7 @@ export default function Navbar() {
       const token = localStorage.getItem("pinjemdong-token");
       if (!token) return;
       try {
-        const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/wishlist", {
+        const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/wishlist", {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();

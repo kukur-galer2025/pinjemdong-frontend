@@ -57,7 +57,7 @@ export default function AdminChats() {
 
   const fetchContacts = async (token: string) => {
     try {
-      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/chats", {
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
@@ -70,13 +70,13 @@ export default function AdminChats() {
 
   const fetchHistory = async (userId: number) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api/chats?user_id=${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"}/api/chats?user_id=${userId}`, {
         headers: { "Authorization": `Bearer ${adminUser.token}` }
       });
       if (res.ok) {
         setMessages(await res.json());
         
-        fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats/read", {
+        fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/chats/read", {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${adminUser.token}`,
@@ -107,7 +107,7 @@ export default function AdminChats() {
     setNewMessage("");
 
     try {
-      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "") + "/api/chats", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/chats", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${adminUser.token}`,
