@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description:
     "Platform penyewaan barang #1 di Indonesia. Sewa kamera, alat camping, konsol game, dan ribuan barang lainnya dengan mudah, aman, dan terjangkau.",
   keywords: "sewa barang, rental, pinjem, kamera, camping, konsol game, sewa murah",
-  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     url: "https://pinjemdong.com",
