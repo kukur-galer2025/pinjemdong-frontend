@@ -14,6 +14,8 @@ interface Rental {
   total_amount: string;
   dp_amount: string;
   remaining_amount: string;
+  late_fee_amount?: string;
+  final_total_amount?: string;
   delivery_method: string;
   status: string;
   items: { product_id: number; product: { name: string; primary_image: object | null } }[];
