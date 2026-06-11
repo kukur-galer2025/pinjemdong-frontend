@@ -156,9 +156,13 @@ export default function ResetPasswordPage() {
       <div className="card" style={{ maxWidth: "400px", width: "100%", padding: "40px", borderRadius: "var(--radius-xl)" }}>
         
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
-          <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "var(--background-elevated)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
-          </div>
+          <img 
+            src="/logo-dekstop.webp" 
+            alt="PinjemDong Logo" 
+            className="dark-invert" 
+            style={{ height: "48px", width: "auto", objectFit: "contain", margin: "0 auto 20px", display: "block" }}
+            onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo+Desktop" }}
+          />
           <h1 style={{ fontSize: "1.8rem", fontWeight: 900, marginBottom: "8px", letterSpacing: "-0.02em" }}>Buat Password Baru</h1>
           <p style={{ color: "var(--foreground-muted)", fontSize: "0.95rem" }}>
             Silakan masukkan kata sandi baru Anda yang kuat dan mudah diingat.

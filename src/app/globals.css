@@ -113,6 +113,10 @@
   --glass-backdrop: blur(16px);
 }
 
+[data-theme="dark"] .dark-invert {
+  filter: invert(1) hue-rotate(180deg) brightness(1.2);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

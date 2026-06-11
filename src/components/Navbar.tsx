@@ -128,19 +128,19 @@ export default function Navbar() {
         >
           {/* Logo Mobile (Pendek) */}
           <img 
-            src="/logo-mobile.png" 
+            src="/logo-mobile.webp" 
             alt="PinjemDong Logo" 
-            className="block sm:hidden" 
-            style={{ height: "36px", width: "auto", objectFit: "contain" }}
+            className="block sm:hidden dark-invert" 
+            style={{ height: "36px", width: "auto", objectFit: "contain", transition: "filter 0.3s ease" }}
             onError={(e) => { e.currentTarget.src = "https://placehold.co/100x100?text=Logo+Mobile" }} 
           />
           
           {/* Logo Desktop (Panjang) */}
           <img 
-            src="/logo-desktop.png" 
+            src="/logo-dekstop.webp" 
             alt="PinjemDong Logo" 
-            className="hidden sm:block" 
-            style={{ height: "36px", width: "auto", objectFit: "contain" }} 
+            className="hidden sm:block dark-invert" 
+            style={{ height: "36px", width: "auto", objectFit: "contain", transition: "filter 0.3s ease" }} 
             onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo+Desktop" }}
           />
         </Link>

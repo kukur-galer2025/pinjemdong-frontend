@@ -149,22 +149,13 @@ function LoginForm() {
 
         {/* Header */}
         <div style={{ marginBottom: "32px" }}>
-          <div
-            style={{
-              width: "48px",
-              height: "48px",
-              borderRadius: "var(--radius-md)",
-              background: "var(--primary-gradient)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "1.4rem",
-              marginBottom: "20px",
-              boxShadow: "var(--shadow-glow)",
-            }}
-          >
-            📦
-          </div>
+          <img 
+            src="/logo-dekstop.webp" 
+            alt="PinjemDong Logo" 
+            className="dark-invert" 
+            style={{ height: "48px", width: "auto", objectFit: "contain", marginBottom: "20px" }}
+            onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo+Desktop" }}
+          />
           <h1 style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.02em" }}>
             {isLogin ? "Selamat Datang Kembali" : "Buat Akun Baru"}
           </h1>

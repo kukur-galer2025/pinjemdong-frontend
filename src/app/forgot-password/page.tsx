@@ -58,9 +58,13 @@ export default function ForgotPasswordPage() {
       <div className="card" style={{ maxWidth: "400px", width: "100%", padding: "40px", borderRadius: "var(--radius-xl)" }}>
         
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
-          <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "var(--primary-gradient)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", boxShadow: "0 10px 30px rgba(124, 58, 237, 0.3)" }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          </div>
+          <img 
+            src="/logo-dekstop.webp" 
+            alt="PinjemDong Logo" 
+            className="dark-invert" 
+            style={{ height: "48px", width: "auto", objectFit: "contain", margin: "0 auto 20px", display: "block" }}
+            onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo+Desktop" }}
+          />
           <h1 style={{ fontSize: "1.8rem", fontWeight: 900, marginBottom: "8px", letterSpacing: "-0.02em" }}>Lupa Password</h1>
           <p style={{ color: "var(--foreground-muted)", fontSize: "0.95rem" }}>
             Masukkan email Anda dan kami akan mengirimkan tautan untuk mereset kata sandi.
