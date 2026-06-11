@@ -171,13 +171,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               >
                 <span style={{ fontSize: "1.1rem" }}>{item.icon}</span>
                 {item.label}
-                {item.href === "/admin/payments" && (
-                  <span style={{
-                    marginLeft: "auto", background: "var(--error)", color: "#fff",
-                    fontSize: "0.7rem", fontWeight: 700, padding: "2px 8px",
-                    borderRadius: "var(--radius-full)", minWidth: "20px", textAlign: "center",
-                  }}>!</span>
-                )}
               </Link>
             );
           })}
