@@ -123,8 +123,8 @@ export default function Navbar() {
             display: "flex",
             alignItems: "center",
             textDecoration: "none",
-            flexShrink: 0,
           }}
+        >
           <img 
             src="/logo.webp" 
             alt="PinjemDong Logo" 
