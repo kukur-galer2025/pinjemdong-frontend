@@ -23,6 +23,7 @@ export default function AdminCategoriesPage() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
+  const [deleteConfirmId, setDeleteConfirmId] = useState<number | null>(null);
   
   const [formData, setFormData] = useState({
     name: "",
@@ -118,12 +119,16 @@ export default function AdminCategoriesPage() {
     }
   };
 
-  const handleDelete = async (id: number) => {
-    if (!confirm("Yakin ingin menghapus kategori ini? Jika ada produk di dalamnya, sistem akan menolak atau menyarankan penonaktifan.")) return;
+  const confirmDelete = (id: number) => {
+    setDeleteConfirmId(id);
+  };
+
+  const handleDelete = async () => {
+    if (!deleteConfirmId) return;
     
     const token = localStorage.getItem("pinjemdong-token");
     try {
-      const res = await fetch(`${API}/admin/categories/${id}`, {
+      const res = await fetch(`${API}/admin/categories/${deleteConfirmId}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -137,6 +142,8 @@ export default function AdminCategoriesPage() {
       }
     } catch (err) {
       toast.error("Terjadi kesalahan koneksi.");
+    } finally {
+      setDeleteConfirmId(null);
     }
   };
 
@@ -208,7 +215,7 @@ export default function AdminCategoriesPage() {
                       <button onClick={() => openEditModal(cat)} style={{ background: "none", border: "1px solid var(--primary)", color: "var(--primary)", padding: "6px 12px", borderRadius: "var(--radius-sm)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer", marginRight: "8px" }}>
                         Edit
                       </button>
-                      <button onClick={() => handleDelete(cat.id)} style={{ background: "none", border: "1px solid var(--error)", color: "var(--error)", padding: "6px 12px", borderRadius: "var(--radius-sm)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer" }}>
+                      <button onClick={() => confirmDelete(cat.id)} style={{ background: "none", border: "1px solid var(--error)", color: "var(--error)", padding: "6px 12px", borderRadius: "var(--radius-sm)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer" }}>
                         Hapus
                       </button>
                     </td>
@@ -273,6 +280,29 @@ export default function AdminCategoriesPage() {
               </div>
 
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal Konfirmasi Hapus */}
+      {deleteConfirmId && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999, padding: "20px" }}>
+          <div className="card" style={{ width: "100%", maxWidth: "400px", borderRadius: "var(--radius-lg)", padding: "24px", textAlign: "center" }}>
+            <div style={{ fontSize: "3rem", marginBottom: "16px" }}>⚠️</div>
+            <h3 style={{ fontWeight: 800, fontSize: "1.2rem", marginBottom: "12px", color: "var(--foreground)" }}>
+              Hapus Kategori?
+            </h3>
+            <p style={{ fontSize: "0.9rem", color: "var(--foreground-muted)", marginBottom: "24px", lineHeight: "1.5" }}>
+              Yakin ingin menghapus kategori ini? Jika masih ada produk di dalam kategori ini, sistem akan menolaknya demi keamanan data. Sebaiknya gunakan opsi "Nonaktifkan" pada saat Edit.
+            </p>
+            <div style={{ display: "flex", gap: "12px" }}>
+              <button onClick={() => setDeleteConfirmId(null)} style={{ flex: 1, padding: "12px", borderRadius: "var(--radius-md)", border: "1px solid var(--border)", background: "var(--background)", cursor: "pointer", fontWeight: 600 }}>
+                Batal
+              </button>
+              <button onClick={handleDelete} style={{ flex: 1, padding: "12px", borderRadius: "var(--radius-md)", border: "none", background: "var(--error)", color: "white", cursor: "pointer", fontWeight: 600 }}>
+                Ya, Hapus
+              </button>
+            </div>
           </div>
         </div>
       )}
