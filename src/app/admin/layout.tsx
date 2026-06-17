@@ -12,6 +12,7 @@ const navItems = [
   { href: "/admin/payments", icon: "💳", label: "Pembayaran" },
   { href: "/admin/kyc", icon: "🛡️", label: "Verifikasi Identitas" },
   { href: "/admin/products", icon: "🏷️", label: "Produk" },
+  { href: "/admin/categories", icon: "📂", label: "Kategori" },
   { href: "/admin/packages", icon: "🎁", label: "Paket Sewa" },
   { href: "/admin/reviews", icon: "⭐", label: "Ulasan" },
   { href: "/admin/chats", icon: "💬", label: "Live Chat" },
