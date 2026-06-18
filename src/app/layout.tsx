@@ -14,19 +14,19 @@ const font = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "pinjemdong — Sewa Barang Mudah & Terpercaya",
+  title: "PinjemLur — Nggak Perlu Beli, PinjemLur Aja!",
   description:
-    "Platform penyewaan barang #1 di Indonesia. Sewa kamera, alat camping, konsol game, dan ribuan barang lainnya dengan mudah, aman, dan terjangkau.",
+    "Platform penyewaan barang #1 di Indonesia. Nggak Perlu Beli, PinjemLur Aja! Sewa kamera, alat camping, konsol game, dan ribuan barang lainnya dengan mudah, aman, dan terjangkau.",
   keywords: "sewa barang, rental, pinjem, kamera, camping, konsol game, sewa murah",
   openGraph: {
     type: "website",
-    url: "https://pinjemdong.com",
-    title: "pinjemdong — Sewa Barang Mudah & Terpercaya",
-    description: "Platform penyewaan barang #1 di Indonesia.",
-    siteName: "pinjemdong",
+    url: "https://PinjemLur.com",
+    title: "PinjemLur — Nggak Perlu Beli, PinjemLur Aja!",
+    description: "Nggak Perlu Beli, PinjemLur Aja! Platform penyewaan barang #1 di Indonesia.",
+    siteName: "PinjemLur",
   },
   icons: {
-    icon: "/ikon.webp",
+    icon: "/ikon-web.png",
   },
 };
 

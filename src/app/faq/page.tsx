@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "Bagaimana cara menyewa barang di pinjemdong?",
+    question: "Bagaimana cara menyewa barang di PinjemLur?",
     answer: "Sangat mudah! Anda cukup mendaftar akun, melakukan verifikasi identitas (KYC) dengan mengunggah foto KTP, lalu cari barang yang Anda inginkan di Katalog. Tentukan tanggal sewa, lakukan pembayaran, dan barang siap diambil atau diantarkan."
   },
   {

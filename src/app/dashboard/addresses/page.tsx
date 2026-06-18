@@ -22,7 +22,7 @@ export default function AddressesPage() {
   const [addrSaving, setAddrSaving] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
 
     fetch(`${API_URL}/user/addresses`, {
@@ -40,7 +40,7 @@ export default function AddressesPage() {
   }, []);
 
   const handleDeleteAddress = async (id: number) => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
     
     if (!confirm("Hapus alamat tersimpan ini?")) return;
@@ -82,7 +82,7 @@ export default function AddressesPage() {
   };
 
   const handleSaveAddress = async () => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token || !addrLabel.trim() || !addrAddress.trim() || !addrLat || !addrLng) {
       toast.error("Semua field harus diisi");
       return;

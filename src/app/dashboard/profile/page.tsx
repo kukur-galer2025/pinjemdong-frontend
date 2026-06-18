@@ -18,7 +18,7 @@ export default function ProfilePage() {
   const [passwordSaving, setPasswordSaving] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
     
     fetch(`${API_URL}/auth/me`, {
@@ -35,7 +35,7 @@ export default function ProfilePage() {
 
   const handleSaveProfile = async () => {
     setEditSaving(true);
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     const res = await fetch(`${API_URL}/auth/profile`, {
       method: "PUT",
       headers: {
@@ -50,11 +50,11 @@ export default function ProfilePage() {
       toast.success("Profil berhasil disimpan!");
       
       // Update local storage so navbar header updates
-      const savedUser = localStorage.getItem("pinjemdong-user");
+      const savedUser = localStorage.getItem("PinjemLur-user");
       if (savedUser) {
         const u = JSON.parse(savedUser);
         u.name = editName;
-        localStorage.setItem("pinjemdong-user", JSON.stringify(u));
+        localStorage.setItem("PinjemLur-user", JSON.stringify(u));
       }
     } else {
       toast.error("Gagal menyimpan profil.");
@@ -68,7 +68,7 @@ export default function ProfilePage() {
       return;
     }
     setPasswordSaving(true);
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       const res = await fetch(`${API_URL}/auth/password`, {
         method: "PUT",

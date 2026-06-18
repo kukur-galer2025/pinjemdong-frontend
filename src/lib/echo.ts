@@ -15,7 +15,7 @@ export const getEcho = () => {
     echoInstance = new Echo({
       broadcaster: "reverb",
       key: process.env.NEXT_PUBLIC_REVERB_APP_KEY || "ebqjb5gcbwrmlk428asd",
-      wsHost: process.env.NEXT_PUBLIC_REVERB_HOST || "api.pinjemdong.my.id",
+      wsHost: process.env.NEXT_PUBLIC_REVERB_HOST || "api.PinjemLur.my.id",
       wsPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT || 443),
       wssPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT || 443),
       forceTLS: true,

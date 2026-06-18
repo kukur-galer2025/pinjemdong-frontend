@@ -21,7 +21,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const saved = localStorage.getItem("pinjemdong-user");
+    const saved = localStorage.getItem("PinjemLur-user");
     if (saved) {
       try { setUser(JSON.parse(saved)); } catch { /* ignore */ }
     }
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchWishlistCount = async () => {
-      const token = localStorage.getItem("pinjemdong-token");
+      const token = localStorage.getItem("PinjemLur-token");
       if (!token) return;
       try {
         const res = await fetch((process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000") + "/api/wishlist", {
@@ -53,13 +53,13 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchCartCount = () => {
-      const packageStr = localStorage.getItem("pinjemdong-package");
+      const packageStr = localStorage.getItem("PinjemLur-package");
       const packageCart = packageStr && packageStr !== "null" && packageStr !== "undefined" ? JSON.parse(packageStr) : null;
       
       if (packageCart) {
         setCartCount(1);
       } else {
-        const cart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+        const cart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
         const count = cart.reduce((acc: number, item: any) => acc + (item.quantity || 1), 0);
         setCartCount(count);
       }
@@ -73,8 +73,8 @@ export default function Navbar() {
 
   // Handle Logout
   const handleLogout = () => {
-    localStorage.removeItem("pinjemdong-token");
-    localStorage.removeItem("pinjemdong-user");
+    localStorage.removeItem("PinjemLur-token");
+    localStorage.removeItem("PinjemLur-user");
     setUser(null);
     setProfileDropdownOpen(false);
     setMobileMenuOpen(false);
@@ -126,8 +126,8 @@ export default function Navbar() {
           }}
         >
           <img 
-            src="/logo.webp" 
-            alt="PinjemDong Logo" 
+            src="/logo.png" 
+            alt="PinjemLur Logo" 
             className="dark-invert" 
             style={{ height: "36px", width: "auto", objectFit: "contain", transition: "filter 0.3s ease" }} 
             onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo" }}

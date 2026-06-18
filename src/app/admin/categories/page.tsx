@@ -89,7 +89,7 @@ export default function AdminCategoriesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
 
     const method = editingId ? "PUT" : "POST";
     const url = editingId ? `${API}/admin/categories/${editingId}` : `${API}/admin/categories`;
@@ -126,7 +126,7 @@ export default function AdminCategoriesPage() {
   const handleDelete = async () => {
     if (!deleteConfirmId) return;
     
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       const res = await fetch(`${API}/admin/categories/${deleteConfirmId}`, {
         method: "DELETE",

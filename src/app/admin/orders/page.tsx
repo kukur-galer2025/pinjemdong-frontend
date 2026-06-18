@@ -43,7 +43,7 @@ export default function AdminOrders() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const token = typeof window !== "undefined" ? localStorage.getItem("pinjemdong-token") : "";
+  const token = typeof window !== "undefined" ? localStorage.getItem("PinjemLur-token") : "";
 
   const fetchRentals = () => {
     setLoading(true);

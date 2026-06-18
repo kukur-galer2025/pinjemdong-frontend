@@ -27,8 +27,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
-    const saved = localStorage.getItem("pinjemdong-user");
+    const token = localStorage.getItem("PinjemLur-token");
+    const saved = localStorage.getItem("PinjemLur-user");
     if (!token || !saved) {
       router.push("/login");
       return;
@@ -46,8 +46,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem("pinjemdong-token");
-    localStorage.removeItem("pinjemdong-user");
+    localStorage.removeItem("PinjemLur-token");
+    localStorage.removeItem("PinjemLur-user");
     router.push("/login");
   };
 
@@ -134,7 +134,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
             <div>
               <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--foreground)", letterSpacing: "-0.02em" }}>
-                pinjemdong
+                PinjemLur
               </div>
               <div style={{ fontSize: "0.7rem", color: "var(--primary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
                 Admin Panel

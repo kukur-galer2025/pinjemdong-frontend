@@ -112,7 +112,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         }
         
         // Check wishlist status
-        const token = localStorage.getItem("pinjemdong-token");
+        const token = localStorage.getItem("PinjemLur-token");
         if (token && data.product) {
           fetch(`${API_URL}/wishlist`, {
             headers: { "Authorization": `Bearer ${token}` }
@@ -131,7 +131,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       });
 
     // Load saved dates if any
-    const savedDates = localStorage.getItem("pinjemdong-dates");
+    const savedDates = localStorage.getItem("PinjemLur-dates");
     if (savedDates) {
       try {
         const { start, end } = JSON.parse(savedDates);
@@ -139,7 +139,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       } catch (e) {}
     }
 
-    const savedTimes = localStorage.getItem("pinjemdong-times");
+    const savedTimes = localStorage.getItem("PinjemLur-times");
     if (savedTimes) {
       try {
         const { pickup, return: retTime } = JSON.parse(savedTimes);
@@ -154,10 +154,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
     setAddingToCart(true);
 
-    const cart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+    const cart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
     
     // Clear package if normal item is added
-    localStorage.removeItem("pinjemdong-package");
+    localStorage.removeItem("PinjemLur-package");
 
     const existingIndex = cart.findIndex((item: any) => item.product_id === product.id);
 
@@ -177,7 +177,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       });
     }
 
-    localStorage.setItem("pinjemdong-cart", JSON.stringify(cart));
+    localStorage.setItem("PinjemLur-cart", JSON.stringify(cart));
 
     window.dispatchEvent(new Event('cart-updated'));
 
@@ -203,7 +203,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   };
 
   const toggleWishlist = async () => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) {
       showToast("Perlu Masuk Akun", "Masuk (login) terlebih dahulu untuk menyimpan ke Wishlist.", false);
       setTimeout(() => {
@@ -668,7 +668,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       const currentEnd = dateRange?.[1] || newStart;
                       const safeEnd = newStart > currentEnd ? newStart : currentEnd;
                       setDateRange([newStart, safeEnd]);
-                      localStorage.setItem("pinjemdong-dates", JSON.stringify({ 
+                      localStorage.setItem("PinjemLur-dates", JSON.stringify({ 
                         start: e.target.value, 
                         end: new Date(safeEnd.getTime() - (safeEnd.getTimezoneOffset() * 60000)).toISOString().split("T")[0]
                       }));
@@ -684,7 +684,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       const newEnd = new Date(e.target.value);
                       const currentStart = dateRange?.[0] || newEnd;
                       setDateRange([currentStart, newEnd]);
-                      localStorage.setItem("pinjemdong-dates", JSON.stringify({ 
+                      localStorage.setItem("PinjemLur-dates", JSON.stringify({ 
                         start: new Date(currentStart.getTime() - (currentStart.getTimezoneOffset() * 60000)).toISOString().split("T")[0], 
                         end: e.target.value
                       }));
@@ -701,7 +701,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     value={pickupTime} 
                     onChange={(e) => {
                       setPickupTime(e.target.value);
-                      localStorage.setItem("pinjemdong-times", JSON.stringify({ pickup: e.target.value, return: returnTime }));
+                      localStorage.setItem("PinjemLur-times", JSON.stringify({ pickup: e.target.value, return: returnTime }));
                     }}
                     style={{ width: "100%", padding: "10px", borderRadius: "var(--radius-md)", border: "1px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none" }}
                   >
@@ -714,7 +714,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     value={returnTime} 
                     onChange={(e) => {
                       setReturnTime(e.target.value);
-                      localStorage.setItem("pinjemdong-times", JSON.stringify({ pickup: pickupTime, return: e.target.value }));
+                      localStorage.setItem("PinjemLur-times", JSON.stringify({ pickup: pickupTime, return: e.target.value }));
                     }}
                     style={{ width: "100%", padding: "10px", borderRadius: "var(--radius-md)", border: "1px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none" }}
                   >

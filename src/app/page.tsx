@@ -118,7 +118,7 @@ export default function HomePage() {
                 padding: "6px 20px", borderRadius: "20px", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.5px",
                 display: "inline-block", marginBottom: "24px", boxShadow: "0 4px 14px rgba(0,0,0,0.03)"
               }}>
-                ✨ LAYANAN SEWA KELAS SATU
+                ✨ Nggak Perlu Beli, PinjemLur Aja!
               </div>
 
               <h1
@@ -578,7 +578,7 @@ export default function HomePage() {
               Kenapa Memilih Kami?
             </span>
             <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 800, marginTop: "12px", letterSpacing: "-0.02em", color: "var(--foreground)" }}>
-              Keuntungan Menyewa di <span className="gradient-text">pinjemdong</span>
+              Keuntungan Menyewa di <span className="gradient-text">PinjemLur</span>
             </h2>
           </div>
 

@@ -24,7 +24,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("pinjemdong-theme") as Theme;
+    const savedTheme = localStorage.getItem("PinjemLur-theme") as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -39,7 +39,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     // Add transition class before changing theme
     document.documentElement.classList.add("theme-transition");
     setTheme(newTheme);
-    localStorage.setItem("pinjemdong-theme", newTheme);
+    localStorage.setItem("PinjemLur-theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     // Remove transition class after animation completes
     setTimeout(() => {

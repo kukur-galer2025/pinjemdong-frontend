@@ -223,8 +223,8 @@ export default function ResetPasswordPage() {
         
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
           <img 
-            src="/logo.webp" 
-            alt="PinjemDong Logo" 
+            src="/logo.png" 
+            alt="PinjemLur Logo" 
             className="dark-invert" 
             style={{ height: "48px", width: "auto", objectFit: "contain", margin: "0 auto 20px", display: "block" }}
             onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo" }}

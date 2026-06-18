@@ -32,7 +32,7 @@ export default function NotificationDropdown() {
   const router = useRouter();
 
   const fetchNotifications = async () => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
 
     try {
@@ -70,7 +70,7 @@ export default function NotificationDropdown() {
 
   const markAsRead = async (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
 
     setNotifications(prev => prev.map(n => n.id === id ? { ...n, read_at: new Date().toISOString() } : n));
@@ -90,7 +90,7 @@ export default function NotificationDropdown() {
   };
 
   const markAllRead = async () => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
 
     setNotifications(prev => prev.map(n => ({ ...n, read_at: new Date().toISOString() })));

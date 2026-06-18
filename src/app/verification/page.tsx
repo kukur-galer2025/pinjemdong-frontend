@@ -25,7 +25,7 @@ export default function VerificationPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) { window.location.href = "/login"; return; }
 
     fetch(`${API_URL}/verification/status`, {
@@ -72,7 +72,7 @@ export default function VerificationPage() {
 
     setSubmitting(true);
 
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     const formData = new FormData();
     formData.append("ktp_number", ktpNumber);
     formData.append("emergency_contact_name", emergencyName);

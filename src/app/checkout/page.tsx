@@ -80,7 +80,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     // Load cart from localStorage
-    const cart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+    const cart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
     setCartItems(cart);
 
     // Auto-sync: single batch fetch, match by product_id
@@ -117,7 +117,7 @@ export default function CheckoutPage() {
             });
 
           setCartItems(synced);
-          localStorage.setItem("pinjemdong-cart", JSON.stringify(synced));
+          localStorage.setItem("PinjemLur-cart", JSON.stringify(synced));
           
           // Wrap dispatch in setTimeout to ensure it doesn't interrupt the current render cycle
           setTimeout(() => {
@@ -128,7 +128,7 @@ export default function CheckoutPage() {
     }
 
     // Load package if any
-    const pkg = JSON.parse(localStorage.getItem("pinjemdong-package") || "null");
+    const pkg = JSON.parse(localStorage.getItem("PinjemLur-package") || "null");
     setPackageData(pkg);
 
     // Load bank accounts
@@ -138,7 +138,7 @@ export default function CheckoutPage() {
       .catch(console.error);
 
     // Load saved addresses
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (token) {
       fetch(`${API_URL}/user/addresses`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -149,7 +149,7 @@ export default function CheckoutPage() {
     }
 
     // Load saved delivery data
-    const savedDelivery = localStorage.getItem("pinjemdong-delivery");
+    const savedDelivery = localStorage.getItem("PinjemLur-delivery");
     if (savedDelivery) {
       try {
         const { method, loc, address } = JSON.parse(savedDelivery);
@@ -160,7 +160,7 @@ export default function CheckoutPage() {
     }
 
     // Load saved dates
-    const savedDates = localStorage.getItem("pinjemdong-dates");
+    const savedDates = localStorage.getItem("PinjemLur-dates");
     if (savedDates) {
       try {
         const { start, end } = JSON.parse(savedDates);
@@ -170,7 +170,7 @@ export default function CheckoutPage() {
     }
 
     // Load saved times
-    const savedTimes = localStorage.getItem("pinjemdong-times");
+    const savedTimes = localStorage.getItem("PinjemLur-times");
     if (savedTimes) {
       try {
         const { pickup, return: retTime } = JSON.parse(savedTimes);
@@ -182,7 +182,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     // Check KYC Status
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (token) {
       fetch(`${API_URL}/auth/me`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -231,7 +231,7 @@ export default function CheckoutPage() {
       return;
     }
 
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) {
       window.location.href = "/login";
       return;
@@ -306,8 +306,8 @@ export default function CheckoutPage() {
       }
 
       // Clear cart
-      localStorage.removeItem("pinjemdong-cart");
-      localStorage.removeItem("pinjemdong-package");
+      localStorage.removeItem("PinjemLur-cart");
+      localStorage.removeItem("PinjemLur-package");
 
       router.push("/dashboard");
       setInvoiceData({
@@ -327,7 +327,7 @@ export default function CheckoutPage() {
     setCartItems((prev) => {
       const updated = prev.filter((i) => i.product_id !== productId);
       setTimeout(() => {
-        localStorage.setItem("pinjemdong-cart", JSON.stringify(updated));
+        localStorage.setItem("PinjemLur-cart", JSON.stringify(updated));
         window.dispatchEvent(new Event('cart-updated'));
       }, 0);
       return updated;
@@ -349,7 +349,7 @@ export default function CheckoutPage() {
         return item;
       });
       setTimeout(() => {
-        localStorage.setItem("pinjemdong-cart", JSON.stringify(updated));
+        localStorage.setItem("PinjemLur-cart", JSON.stringify(updated));
         window.dispatchEvent(new Event('cart-updated'));
       }, 0);
       return updated;
@@ -576,7 +576,7 @@ export default function CheckoutPage() {
                   <button
                     onClick={() => {
                       setPackageData(null);
-                      localStorage.removeItem("pinjemdong-package");
+                      localStorage.removeItem("PinjemLur-package");
                     }}
                     style={{ background: "none", border: "none", color: "var(--error)", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600, marginTop: "16px", display: "inline-flex", alignItems: "center", gap: "4px" }}
                   >
@@ -669,7 +669,7 @@ export default function CheckoutPage() {
                   <label style={{ fontSize: "0.85rem", fontWeight: 600, marginBottom: "8px", display: "block", color: "var(--foreground-secondary)" }}>Tanggal Mulai</label>
                   <input type="date" value={startDate} min={todayStr} onChange={(e) => {
                     setStartDate(e.target.value);
-                    localStorage.setItem("pinjemdong-dates", JSON.stringify({ start: e.target.value, end: endDate }));
+                    localStorage.setItem("PinjemLur-dates", JSON.stringify({ start: e.target.value, end: endDate }));
                   }}
                     style={{ width: "100%", padding: "14px 16px", borderRadius: "var(--radius-md)", border: "1.5px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none", fontSize: "0.95rem", transition: "border-color 0.2s" }} 
                     onFocus={e => e.currentTarget.style.borderColor = "var(--primary)"}
@@ -680,7 +680,7 @@ export default function CheckoutPage() {
                   <label style={{ fontSize: "0.85rem", fontWeight: 600, marginBottom: "8px", display: "block", color: "var(--foreground-secondary)" }}>Tanggal Selesai</label>
                   <input type="date" value={endDate} min={startDate || todayStr} onChange={(e) => {
                     setEndDate(e.target.value);
-                    localStorage.setItem("pinjemdong-dates", JSON.stringify({ start: startDate, end: e.target.value }));
+                    localStorage.setItem("PinjemLur-dates", JSON.stringify({ start: startDate, end: e.target.value }));
                   }}
                     style={{ width: "100%", padding: "14px 16px", borderRadius: "var(--radius-md)", border: "1.5px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none", fontSize: "0.95rem", transition: "border-color 0.2s" }} 
                     onFocus={e => e.currentTarget.style.borderColor = "var(--primary)"}
@@ -693,7 +693,7 @@ export default function CheckoutPage() {
                     value={pickupTime} 
                     onChange={(e) => {
                       setPickupTime(e.target.value);
-                      localStorage.setItem("pinjemdong-times", JSON.stringify({ pickup: e.target.value, return: returnTime }));
+                      localStorage.setItem("PinjemLur-times", JSON.stringify({ pickup: e.target.value, return: returnTime }));
                     }}
                     style={{ width: "100%", padding: "14px 16px", borderRadius: "var(--radius-md)", border: "1.5px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none", fontSize: "0.95rem", transition: "border-color 0.2s" }}
                   >
@@ -706,7 +706,7 @@ export default function CheckoutPage() {
                     value={returnTime} 
                     onChange={(e) => {
                       setReturnTime(e.target.value);
-                      localStorage.setItem("pinjemdong-times", JSON.stringify({ pickup: pickupTime, return: e.target.value }));
+                      localStorage.setItem("PinjemLur-times", JSON.stringify({ pickup: pickupTime, return: e.target.value }));
                     }}
                     style={{ width: "100%", padding: "14px 16px", borderRadius: "var(--radius-md)", border: "1.5px solid var(--border)", background: "var(--background-elevated)", color: "var(--foreground)", outline: "none", fontSize: "0.95rem", transition: "border-color 0.2s" }}
                   >

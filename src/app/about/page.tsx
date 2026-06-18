@@ -30,7 +30,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p style={{ fontSize: "1.15rem", opacity: 0.8, lineHeight: "1.7", fontWeight: 400 }}>
-            pinjemdong hadir untuk memberikan akses tanpa batas ke berbagai perlengkapan impian Anda, tanpa beban kepemilikan. Kami memicu petualangan dan momen berharga Anda.
+            PinjemLur hadir untuk memberikan akses tanpa batas ke berbagai perlengkapan impian Anda, tanpa beban kepemilikan. Kami memicu petualangan dan momen berharga Anda.
           </p>
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         {/* Keunggulan */}
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <h2 style={{ fontSize: "2.5rem", fontWeight: 800, marginBottom: "16px", letterSpacing: "-0.02em" }}>Mengapa Memilih Kami?</h2>
-          <p style={{ color: "var(--foreground-muted)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>Berbagai alasan mengapa ribuan orang mempercayakan kebutuhan perlengkapan mereka kepada pinjemdong.</p>
+          <p style={{ color: "var(--foreground-muted)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>Berbagai alasan mengapa ribuan orang mempercayakan kebutuhan perlengkapan mereka kepada PinjemLur.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginBottom: "80px" }}>

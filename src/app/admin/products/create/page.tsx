@@ -29,7 +29,7 @@ export default function CreateProduct() {
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const token = typeof window !== "undefined" ? localStorage.getItem("pinjemdong-token") : "";
+  const token = typeof window !== "undefined" ? localStorage.getItem("PinjemLur-token") : "";
 
   useEffect(() => {
     fetch(`${API}/categories`)

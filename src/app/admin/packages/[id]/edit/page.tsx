@@ -33,7 +33,7 @@ export default function EditPackage() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const token = typeof window !== "undefined" ? localStorage.getItem("pinjemdong-token") : "";
+  const token = typeof window !== "undefined" ? localStorage.getItem("PinjemLur-token") : "";
 
   useEffect(() => {
     if (!packageId) return;

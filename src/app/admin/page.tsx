@@ -32,7 +32,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     fetch(`${API}/admin/stats`, {
       headers: { Authorization: `Bearer ${token}` },
     })

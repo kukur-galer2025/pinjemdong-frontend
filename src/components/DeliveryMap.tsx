@@ -105,7 +105,7 @@ export default function DeliveryMap({ onLocationSelect, onDistanceExceeded, init
       L.marker([STORE_LAT, STORE_LNG], { icon: storeIcon })
         .addTo(map)
         .bindPopup(
-          '<div style="text-align:center;font-weight:700;font-size:13px;">📍 Toko PinjemDong<br/><span style="font-weight:400;font-size:11px;color:#666;">Lokasi Toko</span></div>'
+          '<div style="text-align:center;font-weight:700;font-size:13px;">📍 Toko PinjemLur<br/><span style="font-weight:400;font-size:11px;color:#666;">Lokasi Toko</span></div>'
         );
 
       // 20km radius circle

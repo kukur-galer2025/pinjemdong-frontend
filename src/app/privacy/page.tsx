@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
               Dasar Hukum Perlindungan Data
             </h2>
             <div style={{ lineHeight: 1.8, fontSize: "0.95rem" }}>
-              <p style={{ marginBottom: "8px" }}>Kebijakan Privasi ini disusun berdasarkan kepatuhan PinjemDong terhadap regulasi hukum di Indonesia, yang meliputi:</p>
+              <p style={{ marginBottom: "8px" }}>Kebijakan Privasi ini disusun berdasarkan kepatuhan PinjemLur terhadap regulasi hukum di Indonesia, yang meliputi:</p>
               <ul style={{ paddingLeft: "24px", margin: 0 }}>
                 <li><strong>UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP):</strong> Mengatur prinsip pengumpulan, pemrosesan, dan pelindungan data pribadi pengguna.</li>
                 <li><strong>UU No. 11 Tahun 2008 jo. UU No. 19 Tahun 2016 (UU ITE):</strong> Mengatur penyelenggaraan sistem dan transaksi elektronik yang aman dan andal.</li>
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <p style={{ marginBottom: "24px" }}>
-            Di <strong>pinjemdong</strong>, privasi pengunjung dan pelanggan kami adalah prioritas utama. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh kami serta bagaimana kami menggunakannya.
+            Di <strong>PinjemLur</strong>, privasi pengunjung dan pelanggan kami adalah prioritas utama. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh kami serta bagaimana kami menggunakannya.
           </p>
 
           <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--foreground)", marginTop: "40px", marginBottom: "16px" }}>1. Informasi yang Kami Kumpulkan</h2>
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
             (1) Berdasarkan <strong>Pasal 39 UU PDP</strong>, Kami <strong>tidak akan menjual, memperdagangkan, atau menyewakan</strong> informasi identifikasi pribadi Pengguna kepada pihak ketiga mana pun tanpa persetujuan eksplisit dari Pengguna.
           </p>
           <p style={{ marginBottom: "24px" }}>
-            (2) Pengecualian terhadap ayat (1), PinjemDong berhak dan berkewajiban memberikan informasi identitas pribadi (termasuk KTP) kepada pihak Penegak Hukum (Kepolisian RI, Kejaksaan, atau Pengadilan) secara sah apabila terdapat indikasi tindak pidana penipuan, pencurian, atau penggelapan aset perusahaan sesuai dengan prosedur hukum yang berlaku di Republik Indonesia.
+            (2) Pengecualian terhadap ayat (1), PinjemLur berhak dan berkewajiban memberikan informasi identitas pribadi (termasuk KTP) kepada pihak Penegak Hukum (Kepolisian RI, Kejaksaan, atau Pengadilan) secara sah apabila terdapat indikasi tindak pidana penipuan, pencurian, atau penggelapan aset perusahaan sesuai dengan prosedur hukum yang berlaku di Republik Indonesia.
           </p>
 
           <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--foreground)", marginTop: "40px", marginBottom: "16px" }}>5. Persetujuan Anda</h2>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
           <hr style={{ border: "none", borderTop: "1px solid var(--border)", margin: "40px 0 24px" }} />
           
           <p style={{ fontSize: "0.95rem" }}>
-            Jika Anda memiliki pertanyaan tambahan atau memerlukan informasi lebih lanjut tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami melalui fitur Live Chat atau email ke <strong>privacy@pinjemdong.com</strong>.
+            Jika Anda memiliki pertanyaan tambahan atau memerlukan informasi lebih lanjut tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami melalui fitur Live Chat atau email ke <strong>privacy@PinjemLur.com</strong>.
           </p>
 
         </div>

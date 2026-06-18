@@ -46,8 +46,8 @@ function LoginForm() {
       }
 
       // Save token
-      localStorage.setItem("pinjemdong-token", data.token);
-      localStorage.setItem("pinjemdong-user", JSON.stringify(data.user));
+      localStorage.setItem("PinjemLur-token", data.token);
+      localStorage.setItem("PinjemLur-user", JSON.stringify(data.user));
 
       window.location.href = "/dashboard";
     } catch {
@@ -77,8 +77,8 @@ function LoginForm() {
         });
         const data = await res.json();
         if (res.ok) {
-          localStorage.setItem("pinjemdong-token", data.token);
-          localStorage.setItem("pinjemdong-user", JSON.stringify(data.user));
+          localStorage.setItem("PinjemLur-token", data.token);
+          localStorage.setItem("PinjemLur-user", JSON.stringify(data.user));
           window.location.href = "/dashboard";
         } else {
           setError(data.message || "Gagal login dengan Google.");
@@ -153,17 +153,20 @@ function LoginForm() {
         {/* Header */}
         <div style={{ marginBottom: "32px" }}>
           <img 
-            src="/logo.webp" 
-            alt="PinjemDong Logo" 
+            src="/logo.png" 
+            alt="PinjemLur Logo" 
             className="dark-invert" 
-            style={{ height: "48px", width: "auto", objectFit: "contain", marginBottom: "20px" }}
+            style={{ height: "48px", width: "auto", objectFit: "contain", marginBottom: "16px" }}
             onError={(e) => { e.currentTarget.src = "https://placehold.co/200x50?text=Logo" }}
           />
+          <div style={{ display: "inline-block", background: "var(--primary-light)", color: "var(--primary)", padding: "4px 12px", borderRadius: "100px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "16px" }}>
+            ✨ Nggak Perlu Beli, PinjemLur Aja!
+          </div>
           <h1 style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.02em" }}>
             {isLogin ? "Selamat Datang Kembali" : "Buat Akun Baru"}
           </h1>
           <p style={{ color: "var(--foreground-muted)", fontSize: "1rem", marginTop: "8px" }}>
-            {isLogin ? "Masuk ke akun pinjemdong Anda untuk melanjutkan" : "Daftar gratis dan mulai menyewa barang idamanmu"}
+            {isLogin ? "Masuk ke akun PinjemLur Anda untuk melanjutkan" : "Daftar gratis dan mulai menyewa barang idamanmu"}
           </p>
         </div>
 
@@ -488,7 +491,7 @@ export default function LoginPage() {
               Penuhi Kebutuhanmu,<br />Tanpa Harus Membeli.
             </h2>
             <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.8)", maxWidth: "500px", lineHeight: 1.6 }}>
-              Dari kamera profesional hingga peralatan camping premium, sewa dengan aman, cepat, dan transparan bersama pinjemdong.
+              Dari kamera profesional hingga peralatan camping premium, sewa dengan aman, cepat, dan transparan bersama PinjemLur.
             </p>
 
             <div style={{ display: "flex", gap: "24px", marginTop: "40px" }}>

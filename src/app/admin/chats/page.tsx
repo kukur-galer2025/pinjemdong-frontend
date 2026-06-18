@@ -12,8 +12,8 @@ export default function AdminChats() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const userStr = localStorage.getItem("pinjemdong-user");
-    const token = localStorage.getItem("pinjemdong-token");
+    const userStr = localStorage.getItem("PinjemLur-user");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!userStr || !token) return;
     
     const parsedUser = JSON.parse(userStr);

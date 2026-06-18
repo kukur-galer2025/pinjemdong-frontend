@@ -30,7 +30,7 @@ export default function TermsPage() {
               Dasar Hukum Perjanjian Sewa-Menyewa
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "0.95rem" }}>
-              <p style={{ marginBottom: "8px" }}>Syarat dan Ketentuan ini merupakan bentuk kesepakatan tertulis elektronik yang mengikat secara hukum antara Pengguna (Penyewa) dan PinjemDong, yang tunduk pada hukum negara Republik Indonesia, meliputi namun tidak terbatas pada:</p>
+              <p style={{ marginBottom: "8px" }}>Syarat dan Ketentuan ini merupakan bentuk kesepakatan tertulis elektronik yang mengikat secara hukum antara Pengguna (Penyewa) dan PinjemLur, yang tunduk pada hukum negara Republik Indonesia, meliputi namun tidak terbatas pada:</p>
               <ul style={{ paddingLeft: "24px" }}>
                 <li><strong>Pasal 1320 jo. Pasal 1338 KUHPerdata:</strong> Perjanjian elektronik yang disetujui Pengguna sah dan berlaku mengikat sebagai Undang-Undang bagi kedua belah pihak.</li>
                 <li><strong>Pasal 1548 KUHPerdata:</strong> Mengikat secara sah mengenai definisi dan hak serta kewajiban dalam proses sewa-menyewa.</li>
@@ -46,7 +46,7 @@ export default function TermsPage() {
             </h2>
             <div style={{ color: "var(--foreground-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
               <p style={{ marginBottom: "12px" }}>
-                (1) PinjemDong menerapkan sistem durasi <strong>Blok 24-Jam</strong> yang dihitung secara presisi sejak Jam Pengambilan hingga Jam Pengembalian yang Anda pilih saat <i>checkout</i>.
+                (1) PinjemLur menerapkan sistem durasi <strong>Blok 24-Jam</strong> yang dihitung secara presisi sejak Jam Pengambilan hingga Jam Pengembalian yang Anda pilih saat <i>checkout</i>.
               </p>
               <ul style={{ paddingLeft: "24px", marginBottom: "12px" }}>
                 <li>Setiap blok 24 jam akan dihitung sebagai <strong>1 Hari Sewa</strong>.</li>
@@ -107,10 +107,10 @@ export default function TermsPage() {
                 (1) Sebagaimana diatur dalam <strong>Pasal 1564 KUHPerdata</strong>, Penyewa bertanggung jawab penuh atas segala bentuk kerusakan, cacat, atau hilangnya perlengkapan yang terjadi selama masa penyewaan.
               </p>
               <p>
-                (2) Apabila terjadi kerusakan yang dapat diperbaiki, penyewa wajib menanggung seluruh biaya perbaikan atau servis alat terkait sesuai tagihan dari pihak teknisi resmi PinjemDong.
+                (2) Apabila terjadi kerusakan yang dapat diperbaiki, penyewa wajib menanggung seluruh biaya perbaikan atau servis alat terkait sesuai tagihan dari pihak teknisi resmi PinjemLur.
               </p>
               <p>
-                (3) Apabila barang hilang, dicuri, atau dirusak secara sengaja maupun tidak sengaja hingga tidak dapat diservis, maka penyewa wajib melakukan ganti rugi penuh sebesar harga jual resmi barang baru tersebut di pasaran. Apabila penyewa menolak ganti rugi, PinjemDong berhak membawa masalah ini ke jalur perdata maupun pidana sesuai dengan <strong>Pasal 372 KUHP (Tindak Pidana Penggelapan)</strong>.
+                (3) Apabila barang hilang, dicuri, atau dirusak secara sengaja maupun tidak sengaja hingga tidak dapat diservis, maka penyewa wajib melakukan ganti rugi penuh sebesar harga jual resmi barang baru tersebut di pasaran. Apabila penyewa menolak ganti rugi, PinjemLur berhak membawa masalah ini ke jalur perdata maupun pidana sesuai dengan <strong>Pasal 372 KUHP (Tindak Pidana Penggelapan)</strong>.
               </p>
             </div>
           </section>

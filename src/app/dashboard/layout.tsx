@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) {
       window.location.href = "/login";
       return;
@@ -38,19 +38,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         setLoading(false);
       })
       .catch(() => {
-        localStorage.removeItem("pinjemdong-token");
+        localStorage.removeItem("PinjemLur-token");
         window.location.href = "/login";
       });
   }, []);
 
   const handleLogout = () => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     fetch(`${API_URL}/auth/logout`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     }).finally(() => {
-      localStorage.removeItem("pinjemdong-token");
-      localStorage.removeItem("pinjemdong-user");
+      localStorage.removeItem("PinjemLur-token");
+      localStorage.removeItem("PinjemLur-user");
       window.location.href = "/";
     });
   };

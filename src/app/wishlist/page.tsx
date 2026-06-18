@@ -40,7 +40,7 @@ export default function WishlistPage() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) {
       setLoggedIn(false);
       setLoading(false);
@@ -68,7 +68,7 @@ export default function WishlistPage() {
     window.dispatchEvent(new Event('wishlist-updated'));
     showFlash(`"${productName}" berhasil dihapus.`);
 
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       await fetch(`${API_URL}/wishlist/${productId}`, {
         method: "POST",
@@ -86,14 +86,14 @@ export default function WishlistPage() {
       return;
     }
 
-    const packageCart = localStorage.getItem("pinjemdong-package");
+    const packageCart = localStorage.getItem("PinjemLur-package");
     if (packageCart && packageCart !== "null") {
       const confirmReplace = window.confirm("Keranjang Anda saat ini berisi Paket VIP.\nMenambahkan barang individual akan membatalkan paket tersebut.\nLanjutkan?");
       if (!confirmReplace) return;
-      localStorage.removeItem("pinjemdong-package");
+      localStorage.removeItem("PinjemLur-package");
     }
 
-    const currentCart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+    const currentCart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
     const existingIndex = currentCart.findIndex((i: any) => i.product_id === product.id);
     
     if (existingIndex >= 0) {
@@ -109,7 +109,7 @@ export default function WishlistPage() {
       });
     }
     
-    localStorage.setItem("pinjemdong-cart", JSON.stringify(currentCart));
+    localStorage.setItem("PinjemLur-cart", JSON.stringify(currentCart));
     window.dispatchEvent(new Event('cart-updated'));
     showFlash(`"${product.name}" dimasukkan ke Keranjang! 🛒`);
   };

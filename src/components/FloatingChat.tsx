@@ -17,8 +17,8 @@ export default function FloatingChat() {
   }, [isOpen]);
 
   useEffect(() => {
-    const userStr = localStorage.getItem("pinjemdong-user");
-    const token = localStorage.getItem("pinjemdong-token");
+    const userStr = localStorage.getItem("PinjemLur-user");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!userStr || !token) return;
     
     const parsedUser = JSON.parse(userStr);
@@ -178,7 +178,7 @@ export default function FloatingChat() {
               <div style={{ position: "absolute", bottom: "-2px", right: "-2px", width: "14px", height: "14px", background: "#10B981", borderRadius: "50%", border: "2px solid #111", animation: "pulse 2s infinite" }}></div>
             </div>
             <div style={{ flex: 1, marginLeft: "14px", zIndex: 2 }}>
-              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", lineHeight: 1.2, margin: 0, color: "#fff" }}>Admin pinjemdong</h3>
+              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", lineHeight: 1.2, margin: 0, color: "#fff" }}>Admin PinjemLur</h3>
               <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.6)", marginTop: "3px", fontWeight: 500, margin: 0 }}>Biasanya membalas dalam 5 menit</p>
             </div>
             <button onClick={() => setIsOpen(false)} style={{ color: "var(--background)", opacity: 0.7, background: "transparent", border: "none", cursor: "pointer", padding: "4px" }} aria-label="Tutup Obrolan">

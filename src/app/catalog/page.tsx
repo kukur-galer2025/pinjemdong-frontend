@@ -68,7 +68,7 @@ export default function CatalogPage() {
   // Fetch wishlist
   useEffect(() => {
     const fetchWishlist = async () => {
-      const token = localStorage.getItem("pinjemdong-token");
+      const token = localStorage.getItem("PinjemLur-token");
       if (!token) return;
       try {
         const res = await fetch(`${API_URL}/wishlist`, {
@@ -147,7 +147,7 @@ export default function CatalogPage() {
 
   const handleWishlistToggle = async (e: React.MouseEvent, productId: number) => {
     e.preventDefault();
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) {
       setShowLoginModal(true);
       return;

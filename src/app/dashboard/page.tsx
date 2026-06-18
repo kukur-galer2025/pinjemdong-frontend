@@ -83,7 +83,7 @@ export default function DashboardOrdersPage() {
   // Load payment details when modal opens
   const loadPaymentDetails = async (rentalId: number) => {
     setPayLoading(true);
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       const res = await fetch(`${API_URL}/rentals/${rentalId}/payments`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -123,7 +123,7 @@ export default function DashboardOrdersPage() {
   }, [payType, payModal, paySummary]);
 
   useEffect(() => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     if (!token) return;
 
     const headers = {
@@ -145,7 +145,7 @@ export default function DashboardOrdersPage() {
     if (!reviewModal) return;
     setReviewSaving(true);
     setReviewMsg("");
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     
     const formData = new FormData();
     formData.append("product_id", reviewModal.productId.toString());
@@ -173,7 +173,7 @@ export default function DashboardOrdersPage() {
     if (!payModal || !payProof || !payAmount) return;
     setPaySaving(true);
     setPayMsg("");
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
 
     const formData = new FormData();
     formData.append("type", payType);

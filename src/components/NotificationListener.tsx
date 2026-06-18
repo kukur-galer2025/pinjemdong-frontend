@@ -7,7 +7,7 @@ export default function NotificationListener() {
   const [notification, setNotification] = useState<{ title: string; message: string; type: string } | null>(null);
 
   useEffect(() => {
-    const userStr = localStorage.getItem("pinjemdong-user");
+    const userStr = localStorage.getItem("PinjemLur-user");
     if (!userStr) return;
 
     try {

@@ -62,20 +62,20 @@ export default function PackageDetailPage() {
   const handleCheckoutPackage = () => {
     if (!pkg) return;
     
-    const normalCart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+    const normalCart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
     if (normalCart.length > 0) {
       setShowCartWarning(true);
       return; // Route them through warning if they have regular items
     }
 
-    localStorage.setItem("pinjemdong-package", JSON.stringify(pkg));
+    localStorage.setItem("PinjemLur-package", JSON.stringify(pkg));
     router.push("/checkout");
   };
 
   const handleAddToCart = () => {
     if (!pkg) return;
     
-    const normalCart = JSON.parse(localStorage.getItem("pinjemdong-cart") || "[]");
+    const normalCart = JSON.parse(localStorage.getItem("PinjemLur-cart") || "[]");
     if (normalCart.length > 0) {
       setShowCartWarning(true);
       return;
@@ -86,8 +86,8 @@ export default function PackageDetailPage() {
 
   const addToCartConfirmed = (checkout: boolean = false) => {
     if (!pkg) return;
-    localStorage.removeItem("pinjemdong-cart");
-    localStorage.setItem("pinjemdong-package", JSON.stringify(pkg));
+    localStorage.removeItem("PinjemLur-cart");
+    localStorage.setItem("PinjemLur-package", JSON.stringify(pkg));
     setShowCartWarning(false);
     
     // Wrap dispatchEvent in setTimeout to avoid state-update-during-render warnings

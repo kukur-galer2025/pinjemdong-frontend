@@ -26,7 +26,7 @@ export default function AdminReviews() {
 
   const fetchReviews = async () => {
     setLoading(true);
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       const res = await fetch(`${API}/admin/reviews?page=${page}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -48,7 +48,7 @@ export default function AdminReviews() {
   }, [page]);
 
   const handleReply = async (id: number) => {
-    const token = localStorage.getItem("pinjemdong-token");
+    const token = localStorage.getItem("PinjemLur-token");
     try {
       const res = await fetch(`${API}/admin/reviews/${id}/reply`, {
         method: "PUT",

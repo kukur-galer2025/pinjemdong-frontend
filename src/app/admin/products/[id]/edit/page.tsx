@@ -33,7 +33,7 @@ export default function EditProduct() {
   const [existingImages, setExistingImages] = useState<any[]>([]);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const token = typeof window !== "undefined" ? localStorage.getItem("pinjemdong-token") : "";
+  const token = typeof window !== "undefined" ? localStorage.getItem("PinjemLur-token") : "";
 
   useEffect(() => {
     if (!productId) return;
