@@ -750,17 +750,21 @@ export default function HomePage() {
                   "{review.text}"
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "16px", borderTop: "1px solid var(--border)", paddingTop: "20px" }}>
-                  <img
-                    src={review.img}
-                    alt={review.name}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      border: "2px solid var(--primary-light)"
-                    }}
-                  />
+                  <div style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    background: "var(--primary-light)",
+                    color: "var(--primary)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 800,
+                    fontSize: "1.2rem",
+                    border: "2px solid var(--primary-light)"
+                  }}>
+                    {review.name.charAt(0)}
+                  </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--foreground)", marginBottom: "2px" }}>{review.name}</h4>
                     <p style={{ fontSize: "0.8rem", color: "var(--foreground-muted)" }}>{review.role}</p>
