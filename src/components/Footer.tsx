@@ -193,9 +193,7 @@ export default function Footer() {
             <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginBottom: "4px" }}>
               © {new Date().getFullYear()} kelompok A Huket. All rights reserved.
             </p>
-            <p style={{ color: "#94a3b8", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "6px" }}>
-              Didesain dengan <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" color="var(--primary)" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> di Indonesia
-            </p>
+
           </div>
         </div>
       </div>
